@@ -1,0 +1,29 @@
+:root {
+  color-scheme: light;
+  --accent: #d49b28;
+  --secondary: #783e19;
+  --border: #dcd3c3;
+  --prairie-pine: #1e3a2b;
+  --parchment: #faf7f0;
+  --prairie-board: #f2ece1;
+  --ink: #1b221e;
+  --muted-ink: #58625b;
+  --font-display: "Castoro", Georgia, serif;
+  --font-body: "Merriweather Sans", sans-serif;
+  --font-mono: "Spline Sans Mono", monospace;
+}
+
+.material-symbols-outlined,
+.material-symbols-rounded,
+.material-symbols-sharp,
+.material-icons {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1 !important;
+  box-sizing: content-box;
+  overflow: hidden;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}

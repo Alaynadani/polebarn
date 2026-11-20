@@ -1,0 +1,530 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polebarn Line Dancers — Old-Time Western Dance Hall</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="tailwind.config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Merriweather+Sans:wght@400;600;700&amp;family=Spline+Sans+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-accent selection:text-white">
+
+  <!-- TOP BROADSIDE NOTIFICATION RIBBON -->
+  <aside class="bg-light-primary text-light-on-primary py-2.5 px-6 text-center text-body-md border-b-2 border-accent flex items-center justify-center gap-2 shadow-xs">
+    <span class="material-symbols-outlined text-[18px] text-accent">local_florist</span>
+    <span><strong>Friday Night Community Dance:</strong> Doors open at 6:30 PM • Slow Walk-Through at 7:00 PM • Hot spiced cider served in the parlor!</span>
+  </aside>
+
+  <!-- APP SHELL: VINTAGE POSTER STYLE HEADER -->
+  <header class="border-b-2 border-border bg-light-surface sticky top-0 z-30 shadow-xs">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- BRAND LOGO -->
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 rounded-lg bg-light-surface-container-high border-2 border-secondary/40 flex items-center justify-center text-light-primary shadow-xs group-hover:border-accent transition-colors duration-state-change">
+          <span class="material-symbols-outlined text-[28px] text-light-primary">cabin</span>
+        </div>
+        <div>
+          <span class="font-headline text-headline-md text-light-primary tracking-tight block leading-tight font-bold">POLEBARN</span>
+          <span class="text-mono-sm font-mono text-secondary uppercase tracking-widest block font-bold">Line Dancers &amp; Social Club • Est. 2012</span>
+        </div>
+      </a>
+
+      <!-- PRIMARY NAV -->
+      <nav class="flex items-center gap-1 md:gap-2 bg-light-surface-container p-1 rounded-lg border border-border">
+        <a href="index.html" class="px-4 py-2 rounded font-label text-label-lg text-light-on-primary bg-light-primary border border-light-primary font-bold shadow-xs">
+          Dance Hall &amp; Styles
+        </a>
+        <a href="dance-directory.html" class="px-4 py-2 rounded font-label text-label-lg text-light-on-surface-variant hover:text-light-primary hover:bg-light-surface-container-high transition-colors duration-state-change font-bold">
+          Step Sheets &amp; Directory
+        </a>
+        <a href="events.html" class="px-4 py-2 rounded font-label text-label-lg text-light-on-surface-variant hover:text-light-primary hover:bg-light-surface-container-high transition-colors duration-state-change font-bold">
+          Weekly Times &amp; Nights
+        </a>
+      </nav>
+
+      <!-- GLOBAL HEADER ACTION -->
+      <div class="flex items-center gap-3">
+        <a href="events.html" class="inline-flex items-center gap-2 bg-secondary hover:bg-light-primary text-light-on-primary px-5 py-2.5 rounded font-label text-label-lg shadow-xs transition-colors duration-state-change">
+          <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+          <span>View Times of Events</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: VINTAGE FRONTIER LAYOUT -->
+  <main class="flex-1">
+
+    <!-- HERO SECTION: AUTHENTIC BROADSIDE POSTER LAYOUT -->
+    <section class="relative bg-light-surface-container border-b-2 border-border py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- VINTAGE POSTER CARD FRAME -->
+        <div class="bg-light-surface border-2 border-secondary/50 rounded-xl p-8 md:p-12 shadow-md relative overflow-hidden">
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            <!-- LEFT EDITORIAL CONTENT -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-light-surface-container-high border border-border text-secondary font-mono text-mono-sm">
+                <span class="material-symbols-outlined text-[16px] text-secondary">stars</span>
+                <span class="font-bold">ALL SKILL LEVELS • NO PARTNER REQUIRED • 100% COMMUNITY</span>
+              </div>
+
+              <h1 class="font-display text-display-lg text-light-primary leading-tight">
+                Authentic old-time line dancing on polished pine hardwood.
+              </h1>
+
+              <p class="text-body-lg text-light-on-surface-variant leading-relaxed">
+                Step back to the honest warmth of an old country dance hall. Under glowing lantern rafters and fragrant cedar beams, our callers walk through every count so beginners step with confidence and veterans let their boots fly.
+              </p>
+
+              <!-- BROADSIDE HIGHLIGHT BOX -->
+              <div class="p-4 bg-light-surface-container rounded-lg border-2 border-dashed border-border grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <span class="block font-headline text-headline-sm text-light-primary font-bold">3 Nights</span>
+                  <span class="text-mono-sm font-mono text-light-on-surface-variant">Weekly Dancing</span>
+                </div>
+                <div class="border-x border-border">
+                  <span class="block font-headline text-headline-sm text-secondary font-bold">24+</span>
+                  <span class="text-mono-sm font-mono text-light-on-surface-variant">Classic Routines</span>
+                </div>
+                <div>
+                  <span class="block font-headline text-headline-sm text-secondary font-bold">Friendly</span>
+                  <span class="text-mono-sm font-mono text-light-on-surface-variant">Beginner Caller</span>
+                </div>
+              </div>
+
+              <!-- ACTION BUTTONS -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="dance-directory.html" class="inline-flex items-center gap-2 bg-light-primary hover:bg-secondary text-light-on-primary px-6 py-3 rounded font-label text-label-lg shadow-sm transition-all duration-state-change">
+                  <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                  <span>Browse Dance Styles &amp; Steps</span>
+                </a>
+                <a href="events.html" class="inline-flex items-center gap-2 bg-light-surface-container-high hover:bg-border text-light-primary border border-border px-5 py-3 rounded font-label text-label-lg transition-colors duration-state-change">
+                  <span class="material-symbols-outlined text-[20px] text-secondary">schedule</span>
+                  <span>Times &amp; Nightly Timetable</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- RIGHT PHOTOGRAPHIC POSTER CARD -->
+            <div class="lg:col-span-5">
+              <div class="border-2 border-secondary/60 rounded-xl p-2 bg-light-surface-container-high shadow-md">
+                <div class="rounded-lg overflow-hidden relative">
+                  <img src="https://lh3.googleusercontent.com/aida/ALJJyrDDO-01Yk6RN-9rB_U67fj76Aq7Hf2cT5vj-pceb1UDAhIwu6g4IWdf_yk0Y-t2LrDKN0Ot-wEY-3_HaSLiOAyr4ZDimznWXYDrOb1_umK_WY1qPERVwgZn78DF4FOnDmzIJQoCYvdF6XKq4ZIGB1k_h_C2uWLC30974c6tsFIX-ErIROqomauevTN6-_SuIcAWPkGuxYhUzlh2q7aK2jyuv7n49djnCc3tesHrMSE8wUo-mz4nm_KSD5nRipTLM34VMsU" alt="Inside the Polebarn timber hall" class="w-full h-80 object-cover object-center">
+                  <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/85 to-transparent p-5 text-white">
+                    <span class="text-mono-sm font-mono text-white uppercase tracking-widest block font-bold">Historic Hall 4</span>
+                    <span class="font-headline text-headline-sm font-bold text-white block">Friday Night Social Stomp</span>
+                    <span class="text-mono-sm font-mono text-white/90">Doors 6:30 PM • Caller Walkthrough 7:00 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- BOTTOM ORNAMENTAL ACCENTS -->
+          <div class="mt-8 pt-4 border-t border-border flex items-center justify-between text-mono-sm font-mono text-light-on-surface-variant">
+            <span>📍 482 Timber Creek Road • The Barn Hall</span>
+            <span>Free spiced hot cider at the side parlor on Fridays</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: KINDS OF DANCES (NEW 2-COLUMN VINTAGE POSTER LIST LAYOUT) -->
+    <section class="max-w-7xl mx-auto px-6 py-14">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b-2 border-border">
+        <div>
+          <span class="text-mono-sm font-mono text-secondary uppercase tracking-wider block font-bold">Floor Curriculum</span>
+          <h2 class="font-headline text-headline-lg text-light-primary mt-1">Kinds of Dances We Stomp</h2>
+          <p class="text-body-md text-light-on-surface-variant mt-1">Four authentic dance lineages preserved and taught on our hardwood floor.</p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <a href="dance-directory.html" class="inline-flex items-center gap-1 font-label text-label-lg text-secondary hover:text-light-primary font-bold transition-colors duration-state-change">
+            View All 10 Step Sheets with Counts
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2-COLUMN VINTAGE PLACARD GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- DANCE KIND 1: HONKY-TONK CLASSICS -->
+        <article class="bg-light-surface border-2 border-border rounded-xl p-7 shadow-xs hover:border-secondary transition-all duration-state-change flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-border mb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded bg-light-surface-container border border-border flex items-center justify-center text-light-primary font-bold">
+                  <span class="material-symbols-outlined text-[22px]">sports_martial_arts</span>
+                </span>
+                <div>
+                  <h3 class="font-headline text-headline-sm text-light-primary font-bold">Honky-Tonk Classics</h3>
+                  <span class="text-mono-sm font-mono text-secondary">Level: Beginner Friendly</span>
+                </div>
+              </div>
+              <span class="font-mono text-mono-sm bg-accent/20 text-light-primary px-2.5 py-1 rounded font-bold">
+                16–32 Count
+              </span>
+            </div>
+
+            <p class="text-body-md text-light-on-surface-variant mb-5">
+              The foundational dances every country barn across the nation knows by heart. Gentle grapevines, toe-heel swivels, and clean four-wall quarter turns that anyone can master in one evening.
+            </p>
+
+            <div class="bg-light-surface-container rounded-lg p-4 border border-border space-y-2 font-mono text-mono-sm text-light-on-surface">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ The Electric Slide</span>
+                <span class="text-light-on-surface-variant">18 count • 4 wall • 105 BPM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Cowboy Charleston</span>
+                <span class="text-light-on-surface-variant">16 count • 4 wall • 118 BPM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Watermelon Crawl</span>
+                <span class="text-light-on-surface-variant">40 count • 4 wall • 134 BPM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-mono-sm text-secondary font-bold">Taught Tuesdays at 6:30 PM</span>
+            <a href="dance-directory.html" class="inline-flex items-center gap-1 font-label text-label-md text-light-primary hover:text-secondary font-bold">
+              <span>Step Sheet</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DANCE KIND 2: HIGH-ENERGY STOMPS -->
+        <article class="bg-light-surface border-2 border-border rounded-xl p-7 shadow-xs hover:border-secondary transition-all duration-state-change flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-border mb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded bg-light-surface-container border border-border flex items-center justify-center text-light-primary font-bold">
+                  <span class="material-symbols-outlined text-[22px]">bolt</span>
+                </span>
+                <div>
+                  <h3 class="font-headline text-headline-sm text-light-primary font-bold">High-Energy Stomps</h3>
+                  <span class="text-mono-sm font-mono text-secondary">Level: Improver Rhythm</span>
+                </div>
+              </div>
+              <span class="font-mono text-mono-sm bg-secondary/15 text-secondary px-2.5 py-1 rounded font-bold">
+                24–40 Count
+              </span>
+            </div>
+
+            <p class="text-body-md text-light-on-surface-variant mb-5">
+              Syncopated heel taps, scuffs, and thunderous boot digs that shake the barn floor. Faster cadences built around energetic southern rock and 90s honky-tonk anthems.
+            </p>
+
+            <div class="bg-light-surface-container rounded-lg p-4 border border-border space-y-2 font-mono text-mono-sm text-light-on-surface">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Copperhead Road</span>
+                <span class="text-light-on-surface-variant">24 count • 4 wall • High Energy</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ The Tush Push</span>
+                <span class="text-light-on-surface-variant">40 count • 4 wall • 128 BPM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Boot Scootin&#39; Boogie</span>
+                <span class="text-light-on-surface-variant">32 count • 4 wall • 130 BPM</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-mono-sm text-secondary font-bold">Taught Thursdays at 7:00 PM</span>
+            <a href="dance-directory.html" class="inline-flex items-center gap-1 font-label text-label-md text-light-primary hover:text-secondary font-bold">
+              <span>Step Sheet</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DANCE KIND 3: MODERN COUNTRY POP & SWAG -->
+        <article class="bg-light-surface border-2 border-border rounded-xl p-7 shadow-xs hover:border-secondary transition-all duration-state-change flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-border mb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded bg-light-surface-container border border-border flex items-center justify-center text-light-primary font-bold">
+                  <span class="material-symbols-outlined text-[22px]">graphic_eq</span>
+                </span>
+                <div>
+                  <h3 class="font-headline text-headline-sm text-light-primary font-bold">Country Pop &amp; Swag</h3>
+                  <span class="text-mono-sm font-mono text-secondary">Level: Intermediate</span>
+                </div>
+              </div>
+              <span class="font-mono text-mono-sm bg-light-primary/15 text-light-primary px-2.5 py-1 rounded font-bold">
+                32–48 Count
+              </span>
+            </div>
+
+            <p class="text-body-md text-light-on-surface-variant mb-5">
+              Fresh contemporary choreography set to modern radio country and crossover pop hits with coaster steps, body rolls, and smooth rolling paddle turns.
+            </p>
+
+            <div class="bg-light-surface-container rounded-lg p-4 border border-border space-y-2 font-mono text-mono-sm text-light-on-surface">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Shivers Line Dance</span>
+                <span class="text-light-on-surface-variant">32 count • 4 wall • 141 BPM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Good Time (Alan Jackson)</span>
+                <span class="text-light-on-surface-variant">48 count • 4 wall • 132 BPM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Country Girl Shake</span>
+                <span class="text-light-on-surface-variant">32 count • 2 wall • High Energy</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-mono-sm text-secondary font-bold">Featured Fridays at 8:00 PM</span>
+            <a href="dance-directory.html" class="inline-flex items-center gap-1 font-label text-label-md text-light-primary hover:text-secondary font-bold">
+              <span>Step Sheet</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- DANCE KIND 4: COUNTRY WALTZ & SOUTHERN SOUL -->
+        <article class="bg-light-surface border-2 border-border rounded-xl p-7 shadow-xs hover:border-secondary transition-all duration-state-change flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-border mb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded bg-light-surface-container border border-border flex items-center justify-center text-light-primary font-bold">
+                  <span class="material-symbols-outlined text-[22px]">hourglass_top</span>
+                </span>
+                <div>
+                  <h3 class="font-headline text-headline-sm text-light-primary font-bold">Country Waltz &amp; Slow Soul</h3>
+                  <span class="text-mono-sm font-mono text-secondary">Level: All Skill Tiers</span>
+                </div>
+              </div>
+              <span class="font-mono text-mono-sm bg-accent/20 text-light-primary px-2.5 py-1 rounded font-bold">
+                3/4 Cadence
+              </span>
+            </div>
+
+            <p class="text-body-md text-light-on-surface-variant mb-5">
+              Graceful 3/4 box balance lines and soft gliding turns. A beautiful, musical breather between high-octane stomp routines to let dancers catch their breath.
+            </p>
+
+            <div class="bg-light-surface-container rounded-lg p-4 border border-border space-y-2 font-mono text-mono-sm text-light-on-surface">
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Tennessee Waltz</span>
+                <span class="text-light-on-surface-variant">48 count • 2 wall • 88 BPM</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Neon Moon Stroll</span>
+                <span class="text-light-on-surface-variant">32 count • 4 wall • Slow Rhythm</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="font-semibold text-light-primary">✦ Cowboy Sweetheart</span>
+                <span class="text-light-on-surface-variant">48 count • 4 wall • Traditional</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-mono-sm text-secondary font-bold">Monthly Waltz Specialty</span>
+            <a href="dance-directory.html" class="inline-flex items-center gap-1 font-label text-label-md text-light-primary hover:text-secondary font-bold">
+              <span>Step Sheet</span>
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION: TIMES OF EVENTS (VINTAGE PARCHMENT SCHEDULE STRIP) -->
+    <section class="bg-light-surface-container border-y-2 border-border py-14">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-3 border-b border-border">
+          <div>
+            <span class="text-mono-sm font-mono text-secondary uppercase tracking-wider block font-bold">Weekly Schedule</span>
+            <h2 class="font-headline text-headline-lg text-light-primary mt-1">Times of Events &amp; Weekly Classes</h2>
+            <p class="text-body-md text-light-on-surface-variant mt-1">Three distinct weekly gatherings so every dancer finds their rhythm.</p>
+          </div>
+          <a href="events.html" class="mt-4 md:mt-0 inline-flex items-center gap-2 bg-light-primary text-light-on-primary hover:bg-secondary px-5 py-2.5 rounded font-label text-label-lg transition-colors duration-state-change shadow-xs">
+            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+            <span>Full Monthly Timetable</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <!-- EVENT TIME 1: TUESDAY -->
+          <div class="bg-light-surface border-2 border-border rounded-xl p-6 shadow-xs relative">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-headline text-headline-sm text-light-primary font-bold">Tuesdays</span>
+              <span class="bg-accent/20 text-light-primary font-mono text-mono-sm px-2.5 py-0.5 rounded font-bold">Beginner Night</span>
+            </div>
+            <div class="font-mono text-headline-sm text-secondary font-bold mb-2">6:30 PM – 8:30 PM</div>
+            <p class="text-body-md text-light-on-surface-variant mb-4">
+              Slow step breakdown at 6:30 PM sharp. We repeat each 8-count without music until everyone feels the weight shift, then try it to classic acoustic tracks.
+            </p>
+            <div class="border-t border-border pt-3 flex items-center justify-between text-mono-sm font-mono text-light-on-surface-variant">
+              <span>Caller: Clara Mae</span>
+              <span class="text-light-primary font-bold">$8 at Door</span>
+            </div>
+          </div>
+
+          <!-- EVENT TIME 2: THURSDAY -->
+          <div class="bg-light-surface border-2 border-border rounded-xl p-6 shadow-xs relative">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-headline text-headline-sm text-light-primary font-bold">Thursdays</span>
+              <span class="bg-secondary/15 text-secondary font-mono text-mono-sm px-2.5 py-0.5 rounded font-bold">Improver Night</span>
+            </div>
+            <div class="font-mono text-headline-sm text-secondary font-bold mb-2">7:00 PM – 9:30 PM</div>
+            <p class="text-body-md text-light-on-surface-variant mb-4">
+              For dancers ready for syncopated steps, tags, and restarts. We teach one new intermediate routine every week followed by 90 minutes of open floor rotation.
+            </p>
+            <div class="border-t border-border pt-3 flex items-center justify-between text-mono-sm font-mono text-light-on-surface-variant">
+              <span>Callers: Hank &amp; Sarah</span>
+              <span class="text-light-primary font-bold">$10 at Door</span>
+            </div>
+          </div>
+
+          <!-- EVENT TIME 3: FRIDAY -->
+          <div class="bg-light-surface border-2 border-accent rounded-xl p-6 shadow-sm relative">
+            <div class="absolute -top-3 right-4 bg-accent text-light-primary font-mono text-mono-sm font-bold px-2.5 py-0.5 rounded uppercase">
+              Main Community Stomp
+            </div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-headline text-headline-sm text-light-primary font-bold">Fridays</span>
+              <span class="bg-light-primary/15 text-light-primary font-mono text-mono-sm px-2.5 py-0.5 rounded font-bold">Open Social Dance</span>
+            </div>
+            <div class="font-mono text-headline-sm text-secondary font-bold mb-2">7:00 PM – 11:00 PM</div>
+            <p class="text-body-md text-light-on-surface-variant mb-4">
+              Our flagship honky-tonk barn night! 30-minute warm-up walkthrough, live guest callers, requested playlists, warm spiced cider, and open floor dancing.
+            </p>
+            <div class="border-t border-border pt-3 flex items-center justify-between text-mono-sm font-mono text-light-on-surface-variant">
+              <span>DJ Wyatt &amp; Guest Callers</span>
+              <span class="text-light-primary font-bold">$12 at Door</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: OLD-TIME DANCE CODE & HOSPITALITY -->
+    <section class="max-w-7xl mx-auto px-6 py-14">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="border-2 border-secondary/50 rounded-xl p-2 bg-light-surface shadow-xs">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrCE-D61hZxQCYnvff3arMX9ND0rXuJEZ9VCeK1yywdtqvmVFw-4H7ox7bdufg0RSmOwbCHWzTrXIKylw-6kuTnkDhooTBAaE0ishnJJECF0MxYhPI1IsE9ZAwSQB6gXeQEYdXyjy3iX7vzLJZuuiPVsKMj0VwWIvsBji_fl7Wt3F9zgQbMWHFOYRDEUWVac44IgPkJyvG-5Ii8ACV82YJbsMv0BjJIFGBrunfWm8qN323mSVltrh2NA1U1yRefeow" alt="Leather boots on hardwood" class="w-full h-80 object-cover rounded-lg">
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4">
+          <span class="text-mono-sm font-mono text-secondary uppercase tracking-wider block font-bold">Country Hall Tradition</span>
+          <h2 class="font-headline text-headline-lg text-light-primary">First Time on the Hardwood? You&#39;re Right at Home.</h2>
+          <p class="text-body-md text-light-on-surface-variant">
+            Line dancing has endured for over a century because it belongs to everyone. No judgment, no expensive equipment—just friendly people, good songs, and rhythm under your soles.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 bg-light-surface rounded-lg border-2 border-border">
+              <h3 class="font-headline text-headline-sm text-light-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-[20px]">directions_walk</span>
+                Center Floor Strategy
+              </h3>
+              <p class="text-body-md text-light-on-surface-variant mt-1">
+                Stand in the middle row so you always have someone in front of you to watch when we rotate walls!
+              </p>
+            </div>
+            <div class="p-4 bg-light-surface rounded-lg border-2 border-border">
+              <h3 class="font-headline text-headline-sm text-light-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-[20px]">roller_skating</span>
+                Smooth-Soled Footwear
+              </h3>
+              <p class="text-body-md text-light-on-surface-variant mt-1">
+                Leather-soled boots or flat street shoes work best so your knees turn freely without sticking to the maple boards.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- APP SHELL: FOOTER -->
+  <footer class="border-t-2 border-border bg-light-surface-container py-12 text-light-on-surface">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- BRAND INFO -->
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[24px] text-light-primary">cabin</span>
+          <span class="font-headline text-headline-sm text-light-primary font-bold">POLEBARN LINE DANCERS</span>
+        </div>
+        <p class="text-body-md text-light-on-surface-variant">
+          An authentic, warm country line dancing community gathering every Tuesday, Thursday, and Friday night on hardwood timber.
+        </p>
+        <span class="text-mono-sm font-mono text-light-on-surface-variant block">📍 482 Timber Creek Road • The Barn Hall</span>
+      </div>
+
+      <!-- PAGES -->
+      <div>
+        <h4 class="font-headline text-headline-sm text-light-primary mb-3">Pages &amp; Guides</h4>
+        <ul class="space-y-2 text-body-md text-light-on-surface-variant">
+          <li><a href="index.html" class="hover:text-light-primary font-bold text-light-primary">Dance Hall &amp; Styles</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Step Sheets &amp; Directory</a></li>
+          <li><a href="events.html" class="hover:text-light-primary">Weekly Times &amp; Nights</a></li>
+          <li><a href="events.html#workshops" class="hover:text-light-primary">Saturday Intensive Workshops</a></li>
+        </ul>
+      </div>
+
+      <!-- DANCE LEVELS -->
+      <div>
+        <h4 class="font-headline text-headline-sm text-light-primary mb-3">Dances We Teach</h4>
+        <ul class="space-y-2 text-body-md text-light-on-surface-variant">
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Beginner 16 &amp; 32 Count Classics</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Improver Syncopated Stomps</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Modern Country-Pop Routines</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Waltz &amp; Slow Country Rhythm</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT & HOURS -->
+      <div>
+        <h4 class="font-headline text-headline-sm text-light-primary mb-3">Doors &amp; Floor Times</h4>
+        <div class="space-y-2 text-body-md text-light-on-surface-variant">
+          <p><strong class="text-light-primary">Tuesdays:</strong> 6:30 PM – 8:30 PM (Beginners)</p>
+          <p><strong class="text-light-primary">Thursdays:</strong> 7:00 PM – 9:30 PM (Improvers)</p>
+          <p><strong class="text-light-primary">Fridays:</strong> 7:00 PM – 11:00 PM (Social Stomp)</p>
+          <p class="pt-2 text-secondary font-mono text-mono-sm">📞 (555) 782-DANCE • polebarndancers@gmail.com</p>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between text-mono-sm font-mono text-light-on-surface-variant">
+      <span>© 2026 Polebarn Line Dancers. All step counts verified for country dance floors.</span>
+      <span class="mt-2 sm:mt-0">Vintage Pioneer &amp; Prairie Palette • Authentic Timber Hardwood</span>
+    </div>
+  </footer>
+
+
+
+</body></html>

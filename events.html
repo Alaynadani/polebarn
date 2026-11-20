@@ -1,0 +1,480 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events &amp; Times Schedule — Polebarn Line Dancers</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script src="tailwind.config.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&amp;family=Merriweather+Sans:wght@400;600;700&amp;family=Spline+Sans+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-accent selection:text-white">
+
+  <!-- TOP BROADSIDE NOTIFICATION RIBBON -->
+  <aside class="bg-light-primary text-light-on-primary py-2.5 px-6 text-center text-body-md border-b-2 border-accent flex items-center justify-center gap-2 shadow-xs">
+    <span class="material-symbols-outlined text-[18px] text-accent">local_florist</span>
+    <span><strong>Friday Night Community Dance:</strong> Doors open at 6:30 PM • Slow Walk-Through at 7:00 PM • Hot spiced cider served in the parlor!</span>
+  </aside>
+
+  <!-- APP SHELL: HEADER -->
+  <header class="border-b-2 border-border bg-light-surface sticky top-0 z-30 shadow-xs">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- BRAND LOGO -->
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <div class="w-12 h-12 rounded-lg bg-light-surface-container-high border-2 border-secondary/40 flex items-center justify-center text-light-primary shadow-xs group-hover:border-accent transition-colors duration-state-change">
+          <span class="material-symbols-outlined text-[28px] text-light-primary">cabin</span>
+        </div>
+        <div>
+          <span class="font-headline text-headline-md text-light-primary tracking-tight block leading-tight font-bold">POLEBARN</span>
+          <span class="text-mono-sm font-mono text-secondary uppercase tracking-widest block font-bold">Line Dancers &amp; Social Club • Est. 2012</span>
+        </div>
+      </a>
+
+      <!-- PRIMARY NAV -->
+      <nav class="flex items-center gap-1 md:gap-2 bg-light-surface-container p-1 rounded-lg border border-border">
+        <a href="index.html" class="px-4 py-2 rounded font-label text-label-lg text-light-on-surface-variant hover:text-light-primary hover:bg-light-surface-container-high transition-colors duration-state-change font-bold">
+          Dance Hall &amp; Styles
+        </a>
+        <a href="dance-directory.html" class="px-4 py-2 rounded font-label text-label-lg text-light-on-surface-variant hover:text-light-primary hover:bg-light-surface-container-high transition-colors duration-state-change font-bold">
+          Step Sheets &amp; Directory
+        </a>
+        <a href="events.html" class="px-4 py-2 rounded font-label text-label-lg text-light-on-primary bg-light-primary border border-light-primary font-bold shadow-xs">
+          Weekly Times &amp; Nights
+        </a>
+      </nav>
+
+      <!-- GLOBAL HEADER ACTION -->
+      <div class="flex items-center gap-3">
+        <a href="#weekly-timetable" class="inline-flex items-center gap-2 bg-secondary hover:bg-light-primary text-light-on-primary px-5 py-2.5 rounded font-label text-label-lg shadow-xs transition-colors duration-state-change">
+          <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+          <span>View Times of Events</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT: TIMES OF EVENTS & TIMETABLE (REFRESHED VINTAGE POSTER LAYOUT) -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-6 py-10 flex flex-col gap-12">
+
+    <!-- PAGE HERO PLACARD -->
+    <div class="bg-light-surface-container border-2 border-secondary/40 rounded-xl p-8 shadow-xs flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <span class="text-mono-sm font-mono text-secondary uppercase tracking-widest block font-bold">Barn Timetable &amp; Weekly Gatherings</span>
+        <h1 class="font-headline text-headline-lg text-light-primary mt-1 font-bold">Times of Events, Classes &amp; Barn Stomps</h1>
+        <p class="text-body-md text-light-on-surface-variant mt-2 max-w-2xl">
+          Whether you want a patient Tuesday beginner step breakdown or a lively Friday night honky-tonk social on maple timber, here is our full schedule.
+        </p>
+      </div>
+
+      <!-- FILTER BUTTONS -->
+      <div class="flex items-center gap-2">
+        <button onclick="filterEvents(&#39;all&#39;, this)" class="event-filter-btn px-4 py-2 rounded-lg font-label text-label-md bg-light-primary text-light-on-primary shadow-xs transition-colors duration-state-change whitespace-nowrap font-bold border border-light-primary">
+          All Events
+        </button>
+        <button onclick="filterEvents(&#39;weekly&#39;, this)" class="event-filter-btn px-4 py-2 rounded-lg font-label text-label-md bg-light-surface text-light-on-surface-variant hover:text-light-primary border border-border transition-colors duration-state-change whitespace-nowrap font-bold">
+          Weekly Lessons
+        </button>
+        <button onclick="filterEvents(&#39;special&#39;, this)" class="event-filter-btn px-4 py-2 rounded-lg font-label text-label-md bg-light-surface text-light-on-surface-variant hover:text-light-primary border border-border transition-colors duration-state-change whitespace-nowrap font-bold">
+          Saturday Barn Nights
+        </button>
+      </div>
+    </div>
+
+    <!-- WEEKLY RECURRING TIMETABLE (FRONTIER DOUBLE-BORDER TABLE) -->
+    <section id="weekly-timetable">
+      <div class="flex items-center justify-between mb-4 pb-2 border-b border-border">
+        <div>
+          <h2 class="font-headline text-headline-md text-light-primary font-bold">Weekly Floor Timetable</h2>
+          <p class="text-body-md text-light-on-surface-variant">Recurring weekly on the main timber floor • No partner or advance booking needed.</p>
+        </div>
+        <span class="text-mono-sm font-mono bg-light-surface-container px-3 py-1.5 rounded-lg border border-border text-secondary font-bold">
+          Pay at Hall Door
+        </span>
+      </div>
+
+      <div class="border-2 border-secondary/40 rounded-xl overflow-hidden bg-light-surface shadow-xs">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-light-surface-container-high border-b-2 border-secondary/30 text-light-primary">
+                <th scope="col" class="py-4 px-5 font-headline text-headline-sm font-bold">Day &amp; Doors</th>
+                <th scope="col" class="py-4 px-5 font-headline text-headline-sm font-bold">Event &amp; Focus</th>
+                <th scope="col" class="py-4 px-5 font-headline text-headline-sm font-bold">Floor Time Breakdown</th>
+                <th scope="col" class="py-4 px-5 font-headline text-headline-sm font-bold">Host &amp; Music</th>
+                <th scope="col" class="py-4 px-5 font-headline text-headline-sm font-bold">Admission</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              
+              <!-- TUESDAY ROW -->
+              <tr class="hover:bg-light-surface-container transition-colors duration-state-change">
+                <td class="py-5 px-5">
+                  <span class="block font-headline text-headline-sm text-light-primary font-bold">Tuesday Nights</span>
+                  <span class="font-mono text-mono-sm text-secondary font-bold">Doors 6:00 PM</span>
+                </td>
+                <td class="py-5 px-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="bg-accent/20 text-light-primary font-mono text-mono-sm px-2.5 py-0.5 rounded font-bold border border-accent/40">Beginner Roots</span>
+                  </div>
+                  <strong class="text-light-on-surface font-semibold text-body-md block">First Steps &amp; Easy Classics</strong>
+                  <span class="text-body-md text-light-on-surface-variant">Electric Slide, Cowboy Charleston, basic grapevines.</span>
+                </td>
+                <td class="py-5 px-5 font-mono text-mono-sm text-light-on-surface">
+                  <div class="text-secondary font-bold">6:30 PM – 7:30 PM: Step Breakdown</div>
+                  <div class="text-light-on-surface-variant">7:30 PM – 8:30 PM: Slow Music Practice</div>
+                </td>
+                <td class="py-5 px-5 text-body-md text-light-on-surface">
+                  <div class="font-semibold text-light-primary">Clara Mae Jenkins</div>
+                  <span class="text-light-on-surface-variant font-mono text-mono-sm">Traditional Acoustic Country</span>
+                </td>
+                <td class="py-5 px-5 font-mono text-headline-sm font-bold text-light-primary">
+                  $8 at door
+                </td>
+              </tr>
+
+              <!-- THURSDAY ROW -->
+              <tr class="hover:bg-light-surface-container transition-colors duration-state-change">
+                <td class="py-5 px-5">
+                  <span class="block font-headline text-headline-sm text-light-primary font-bold">Thursday Nights</span>
+                  <span class="font-mono text-mono-sm text-secondary font-bold">Doors 6:30 PM</span>
+                </td>
+                <td class="py-5 px-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="bg-secondary/15 text-secondary font-mono text-mono-sm px-2.5 py-0.5 rounded font-bold border border-secondary/30">Improver / Intermediate</span>
+                  </div>
+                  <strong class="text-light-on-surface font-semibold text-body-md block">Syncopated Stomps &amp; Country Pop</strong>
+                  <span class="text-body-md text-light-on-surface-variant">Copperhead Road, Tush Push, modern 4-wall turns.</span>
+                </td>
+                <td class="py-5 px-5 font-mono text-mono-sm text-light-on-surface">
+                  <div class="text-secondary font-bold">7:00 PM – 8:00 PM: Intermediate Routine</div>
+                  <div class="text-light-on-surface-variant">8:00 PM – 9:30 PM: Request Rotation Floor</div>
+                </td>
+                <td class="py-5 px-5 text-body-md text-light-on-surface">
+                  <div class="font-semibold text-light-primary">Hank &amp; Sarah Miller</div>
+                  <span class="text-light-on-surface-variant font-mono text-mono-sm">90s Honky-Tonk &amp; Modern Hits</span>
+                </td>
+                <td class="py-5 px-5 font-mono text-headline-sm font-bold text-light-primary">
+                  $10 at door
+                </td>
+              </tr>
+
+              <!-- FRIDAY ROW -->
+              <tr class="hover:bg-light-surface-container transition-colors duration-state-change bg-accent/5">
+                <td class="py-5 px-5">
+                  <span class="block font-headline text-headline-sm text-light-primary font-bold">Friday Nights</span>
+                  <span class="font-mono text-mono-sm text-secondary font-bold">Doors 6:30 PM</span>
+                </td>
+                <td class="py-5 px-5">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="bg-light-primary text-light-on-primary font-mono text-mono-sm px-2.5 py-0.5 rounded font-bold">Main Social Stomp</span>
+                  </div>
+                  <strong class="text-light-on-surface font-semibold text-body-md block">Open Floor Barn Stomp &amp; Social</strong>
+                  <span class="text-body-md text-light-on-surface-variant">All levels dancing together, hot apple cider in parlor, caller requests.</span>
+                </td>
+                <td class="py-5 px-5 font-mono text-mono-sm text-light-on-surface">
+                  <div class="text-secondary font-bold">7:00 PM – 7:30 PM: Floor Warmup Walkthrough</div>
+                  <div class="text-light-on-surface font-bold">7:30 PM – 11:00 PM: Open Honky-Tonk Social</div>
+                </td>
+                <td class="py-5 px-5 text-body-md text-light-on-surface">
+                  <div class="font-semibold text-light-primary">DJ Wyatt &amp; Guest Callers</div>
+                  <span class="text-light-on-surface-variant font-mono text-mono-sm">Full Spectrum Western &amp; Country Pop</span>
+                </td>
+                <td class="py-5 px-5 font-mono text-headline-sm font-bold text-secondary">
+                  $12 (includes cider)
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPCOMING SPECIAL EVENTS CALENDAR CARDS (VINTAGE PLACARD STYLE) -->
+    <section id="workshops">
+      <div class="flex items-center justify-between mb-6 pb-2 border-b border-border">
+        <div>
+          <span class="text-mono-sm font-mono text-secondary uppercase font-bold">Frontier Calendar Specials</span>
+          <h2 class="font-headline text-headline-md text-light-primary font-bold">Upcoming Barn Specials &amp; Intensive Workshops</h2>
+        </div>
+        <span class="text-mono-sm font-mono text-light-on-surface-variant">November – December 2026</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- EVENT CARD 1 -->
+        <article class="event-card special bg-light-surface border-2 border-border rounded-xl p-6 shadow-xs flex flex-col justify-between hover:border-secondary transition-all duration-state-change">
+          <div>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-light-primary text-light-on-primary rounded-lg p-3 text-center min-w-[64px] shadow-xs border border-accent/40">
+                <span class="block font-headline text-headline-sm uppercase leading-none font-bold">Sat</span>
+                <span class="block font-mono text-title-lg font-bold">Nov 28</span>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block bg-accent/20 text-light-primary font-mono text-mono-sm px-2 py-0.5 rounded font-bold mb-1 border border-accent/40">Bootcamp Workshop</span>
+                <h3 class="font-headline text-headline-sm text-light-primary font-bold">Beginner Bootcamp</h3>
+                <p class="text-mono-sm font-mono text-secondary font-bold text-balance">10:00 AM – 2:00 PM • Lunch</p>
+              </div>
+            </div>
+            <p class="text-body-md text-light-on-surface-variant mb-4">
+              Four hours dedicated entirely to brand new dancers. Master weight transitions, 1/4 and 1/2 pivots, coaster steps, and 4 timeless dances.
+            </p>
+            <div class="p-3 bg-light-surface-container rounded-lg border border-border font-mono text-mono-sm text-light-on-surface space-y-1">
+              <div><strong class="text-light-primary">Instructors:</strong> Clara Mae &amp; Hank Miller</div>
+              <div><strong class="text-light-primary">Perk:</strong> Free warm chili bowl &amp; step binder included.</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-title-lg font-bold text-light-primary">$35</span>
+            <button onclick="rsvpEvent(&#39;Beginner Bootcamp&#39;, &#39;Saturday, Nov 28 • 10:00 AM&#39;)" class="bg-light-primary text-light-on-primary hover:bg-secondary px-4 py-2 rounded-lg font-label text-label-md transition-colors duration-state-change whitespace-nowrap shadow-xs font-bold">
+              RSVP Spot
+            </button>
+          </div>
+        </article>
+
+        <!-- EVENT CARD 2 -->
+        <article class="event-card special bg-light-surface border-2 border-secondary rounded-xl p-6 shadow-xs flex flex-col justify-between hover:border-accent transition-all duration-state-change relative">
+          <div class="absolute -top-3 right-4 bg-secondary text-white font-mono text-mono-sm font-bold px-2.5 py-0.5 rounded uppercase shadow-xs">
+            Live Band Night
+          </div>
+          <div>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-secondary text-white rounded-lg p-3 text-center min-w-[64px] shadow-xs">
+                <span class="block font-headline text-headline-sm uppercase leading-none font-bold">Fri</span>
+                <span class="block font-mono text-title-lg font-bold">Dec 04</span>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block bg-secondary/15 text-secondary font-mono text-mono-sm px-2 py-0.5 rounded font-bold mb-1 border border-secondary/30">Live Honky Tonk</span>
+                <h3 class="font-headline text-headline-sm text-light-primary font-bold">The Timber Rattlers Live</h3>
+                <p class="text-mono-sm font-mono text-secondary font-bold text-balance">7:00 PM – Midnight</p>
+              </div>
+            </div>
+            <p class="text-body-md text-light-on-surface-variant mb-4">
+              A six-piece authentic western swing band playing line dance tempo classics all night long! Guest caller Jim Bob calling between sets.
+            </p>
+            <div class="p-3 bg-light-surface-container rounded-lg border border-border font-mono text-mono-sm text-light-on-surface space-y-1">
+              <div><strong class="text-light-primary">Music:</strong> Live fiddle, pedal steel &amp; telecaster guitars</div>
+              <div><strong class="text-light-primary">Parlor:</strong> Local craft cider, root beer, and pretzel bar</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-title-lg font-bold text-secondary">$18</span>
+            <button onclick="rsvpEvent(&#39;The Timber Rattlers Live&#39;, &#39;Friday, Dec 04 • 7:00 PM&#39;)" class="bg-secondary text-white hover:bg-light-primary px-4 py-2 rounded-lg font-label text-label-md transition-colors duration-state-change whitespace-nowrap shadow-xs font-bold">
+              Reserve Ticket
+            </button>
+          </div>
+        </article>
+
+        <!-- EVENT CARD 3 -->
+        <article class="event-card special bg-light-surface border-2 border-border rounded-xl p-6 shadow-xs flex flex-col justify-between hover:border-secondary transition-all duration-state-change">
+          <div>
+            <div class="flex items-start gap-4 mb-4">
+              <div class="bg-light-primary text-light-on-primary rounded-lg p-3 text-center min-w-[64px] shadow-xs border border-accent/40">
+                <span class="block font-headline text-headline-sm uppercase leading-none font-bold">Sat</span>
+                <span class="block font-mono text-title-lg font-bold">Dec 19</span>
+              </div>
+              <div class="flex-1">
+                <span class="inline-block bg-accent/20 text-light-primary font-mono text-mono-sm px-2 py-0.5 rounded font-bold mb-1 border border-accent/40">Holiday Gala</span>
+                <h3 class="font-headline text-headline-sm text-light-primary font-bold">Cowboy Christmas Stomp</h3>
+                <p class="text-mono-sm font-mono text-secondary font-bold text-balance">6:30 PM – 11:30 PM</p>
+              </div>
+            </div>
+            <p class="text-body-md text-light-on-surface-variant mb-4">
+              Lantern lights everywhere, western holiday attire contest, cookie table, and choreographed Christmas line dances to country holiday hits.
+            </p>
+            <div class="p-3 bg-light-surface-container rounded-lg border border-border font-mono text-mono-sm text-light-on-surface space-y-1">
+              <div><strong class="text-light-primary">Special:</strong> Festive line dance showcase by troupe</div>
+              <div><strong class="text-light-primary">Dress:</strong> Western festive / denim &amp; holiday plaid</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-border flex items-center justify-between">
+            <span class="font-mono text-title-lg font-bold text-light-primary">$15</span>
+            <button onclick="rsvpEvent(&#39;Cowboy Christmas Stomp&#39;, &#39;Saturday, Dec 19 • 6:30 PM&#39;)" class="bg-light-primary text-light-on-primary hover:bg-secondary px-4 py-2 rounded-lg font-label text-label-md transition-colors duration-state-change whitespace-nowrap shadow-xs font-bold">
+              RSVP Spot
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- INSTRUCTOR SPOTLIGHT / HOST BIO -->
+    <section class="bg-light-surface border-2 border-secondary/40 rounded-xl p-8 shadow-xs">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-4 lg:col-span-3">
+          <div class="rounded-lg overflow-hidden border-2 border-border shadow-xs aspect-square">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDYqfpe6KXAu2A5LRtIOBT9AkTc33dg_Bcq0Yx3mBn_0A01cMa8lOi7JCFsEKvUi2n13KZmFD6xVPL0X_0KXGpNiTPxN6WmUQYtcntLqloYaaFT9YCjutMXm6Y8DT8_seqEwd-hI1XLlJyJwZyLKnOX6XAeGOBAov8zqpJLl5gWBs0ZzsHN4Qi0sgTQyt7y120dKx39SZdldtM9uZ0HVMRmJDObeQ3-3uDTlwn0cIFM_qQwi44T4hm5USOn" alt="Instructor Clara Mae" class="w-full h-full object-cover">
+          </div>
+        </div>
+        <div class="md:col-span-8 lg:col-span-9 space-y-3">
+          <span class="text-mono-sm font-mono text-secondary uppercase font-bold">Meet Your Tuesday Teacher</span>
+          <h3 class="font-headline text-headline-md text-light-primary font-bold">Clara Mae Jenkins — Lead Beginner Caller</h3>
+          <p class="text-body-md text-light-on-surface-variant">
+            &#34;I&#39;ve been calling in barns and halls for fourteen years. The only thing I care about is that when you leave the hardwood, you&#39;re smiling and you got the beat in your boots. We count out loud, we laugh at the hiccups, and by the end of hour one, you&#39;ll be stomping in line.&#34;
+          </p>
+          <div class="flex flex-wrap items-center gap-4 pt-2 font-mono text-mono-sm text-light-on-surface">
+            <span class="bg-light-surface-container px-3 py-1 rounded-md border border-border">Certified NTA Caller</span>
+            <span class="bg-light-surface-container px-3 py-1 rounded-md border border-border">14 Years Instructing</span>
+            <span class="bg-light-surface-container px-3 py-1 rounded-md border border-border">Patience Guaranteed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RSVP CONFIRMATION MODAL -->
+  <div id="rsvp-modal" class="fixed inset-0 z-50 bg-black/60 hidden items-center justify-center p-4">
+    <div class="bg-light-surface border-2 border-secondary rounded-xl max-w-md w-full p-6 shadow-2xl relative">
+      <button onclick="closeRsvpModal()" class="absolute right-4 top-4 text-light-on-surface-variant hover:text-light-primary p-1">
+        <span class="material-symbols-outlined text-[24px]">close</span>
+      </button>
+
+      <div class="flex items-center gap-2 text-secondary font-mono text-mono-sm mb-1 font-bold">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span>RSVP &amp; Floor Reservation</span>
+      </div>
+
+      <h3 id="rsvp-title" class="font-headline text-headline-sm text-light-primary mb-1 font-bold">Event Title</h3>
+      <p id="rsvp-time" class="text-mono-sm font-mono text-secondary mb-4 font-bold">Date &amp; Time</p>
+
+      <form onsubmit="handleRsvpSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block font-label text-label-md text-light-primary mb-1 font-bold">Your Full Name</label>
+          <input required type="text" placeholder="e.g. Jesse Calhoun" class="w-full px-3 py-2 bg-light-surface border-2 border-border rounded-lg text-body-md text-light-on-surface focus-visible:ring-2 focus-visible:ring-light-primary focus:outline-none focus:border-secondary">
+        </div>
+        <div>
+          <label class="block font-label text-label-md text-light-primary mb-1 font-bold">Email for Reminder &amp; Directions</label>
+          <input required type="email" placeholder="jesse@example.com" class="w-full px-3 py-2 bg-light-surface border-2 border-border rounded-lg text-body-md text-light-on-surface focus-visible:ring-2 focus-visible:ring-light-primary focus:outline-none focus:border-secondary">
+        </div>
+        <div>
+          <label class="block font-label text-label-md text-light-primary mb-1 font-bold">Number of Dancers</label>
+          <select class="w-full px-3 py-2 bg-light-surface border-2 border-border rounded-lg text-body-md text-light-on-surface focus-visible:ring-2 focus-visible:ring-light-primary focus:outline-none focus:border-secondary">
+            <option>Just me (1 dancer)</option>
+            <option>2 dancers</option>
+            <option>Group of 3-5</option>
+            <option>Group of 6+</option>
+          </select>
+        </div>
+
+        <div class="pt-3 border-t border-border flex items-center justify-end gap-3">
+          <button onclick="closeRsvpModal()" type="button" class="px-4 py-2 rounded-lg font-label text-label-md text-light-on-surface-variant hover:bg-light-surface-container">
+            Cancel
+          </button>
+          <button type="submit" class="bg-light-primary text-light-on-primary hover:bg-secondary px-5 py-2.5 rounded-lg font-label text-label-md transition-colors duration-state-change whitespace-nowrap shadow-xs font-bold">
+            Confirm Floor Spot
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- APP SHELL: FOOTER -->
+  <footer class="border-t-2 border-border bg-light-surface-container py-12 text-light-on-surface">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- BRAND INFO -->
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[24px] text-light-primary">cabin</span>
+          <span class="font-headline text-headline-sm text-light-primary font-bold">POLEBARN LINE DANCERS</span>
+        </div>
+        <p class="text-body-md text-light-on-surface-variant">
+          An authentic, warm country line dancing community gathering every Tuesday, Thursday, and Friday night on hardwood timber.
+        </p>
+        <span class="text-mono-sm font-mono text-light-on-surface-variant block">📍 482 Timber Creek Road • The Barn Hall</span>
+      </div>
+
+      <!-- PAGES -->
+      <div>
+        <h4 class="font-headline text-headline-sm text-light-primary mb-3 font-bold">Pages &amp; Guides</h4>
+        <ul class="space-y-2 text-body-md text-light-on-surface-variant">
+          <li><a href="index.html" class="hover:text-light-primary">Dance Hall &amp; Styles</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Step Sheets &amp; Directory</a></li>
+          <li><a href="events.html" class="hover:text-light-primary font-bold text-light-primary">Weekly Times &amp; Nights</a></li>
+          <li><a href="events.html#workshops" class="hover:text-light-primary">Saturday Intensive Workshops</a></li>
+        </ul>
+      </div>
+
+      <!-- DANCE LEVELS -->
+      <div>
+        <h4 class="font-headline text-headline-sm text-light-primary mb-3 font-bold">Dances We Teach</h4>
+        <ul class="space-y-2 text-body-md text-light-on-surface-variant">
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Beginner 16 &amp; 32 Count Classics</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Improver Syncopated Stomps</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Modern Country-Pop Routines</a></li>
+          <li><a href="dance-directory.html" class="hover:text-light-primary">Waltz &amp; Slow Country Rhythm</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT & HOURS -->
+      <div>
+        <h4 class="font-headline text-headline-sm text-light-primary mb-3 font-bold">Doors &amp; Floor Times</h4>
+        <div class="space-y-2 text-body-md text-light-on-surface-variant">
+          <p><strong class="text-light-primary">Tuesdays:</strong> 6:30 PM – 8:30 PM (Beginners)</p>
+          <p><strong class="text-light-primary">Thursdays:</strong> 7:00 PM – 9:30 PM (Improvers)</p>
+          <p><strong class="text-light-primary">Fridays:</strong> 7:00 PM – 11:00 PM (Social Stomp)</p>
+          <p class="pt-2 text-secondary font-mono text-mono-sm font-bold">📞 (555) 782-DANCE • polebarndancers@gmail.com</p>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between text-mono-sm font-mono text-light-on-surface-variant">
+      <span>© 2026 Polebarn Line Dancers. All step counts verified for country dance floors.</span>
+      <span class="mt-2 sm:mt-0">Vintage Pioneer &amp; Prairie Palette • Authentic Timber Hardwood</span>
+    </div>
+  </footer>
+
+  <script>
+    function filterEvents(category, btn) {
+      document.querySelectorAll('.event-filter-btn').forEach(b => {
+        b.classList.remove('bg-light-primary', 'text-light-on-primary', 'shadow-xs', 'border-light-primary');
+        b.classList.add('bg-light-surface', 'text-light-on-surface-variant', 'border-border');
+      });
+      btn.classList.add('bg-light-primary', 'text-light-on-primary', 'shadow-xs', 'border-light-primary');
+      btn.classList.remove('bg-light-surface', 'text-light-on-surface-variant', 'border-border');
+
+      const weeklyTable = document.getElementById('weekly-timetable');
+      const workshops = document.getElementById('workshops');
+
+      if (category === 'all') {
+        weeklyTable.classList.remove('hidden');
+        workshops.classList.remove('hidden');
+      } else if (category === 'weekly') {
+        weeklyTable.classList.remove('hidden');
+        workshops.classList.add('hidden');
+      } else if (category === 'special') {
+        weeklyTable.classList.add('hidden');
+        workshops.classList.remove('hidden');
+      }
+    }
+
+    function rsvpEvent(title, time) {
+      document.getElementById('rsvp-title').textContent = title;
+      document.getElementById('rsvp-time').textContent = time;
+      const modal = document.getElementById('rsvp-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeRsvpModal() {
+      const modal = document.getElementById('rsvp-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function handleRsvpSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your spot on the dance floor is saved. Check your email for details.');
+      closeRsvpModal();
+    }
+  </script>
+
+
+
+</body></html>

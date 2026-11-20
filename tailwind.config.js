@@ -1,0 +1,83 @@
+/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'accent': '#D49B28',
+        'secondary': '#783E19',
+        'border': '#DCD3C3',
+        'light-primary': '#1E3A2B',
+        'light-on-primary': '#FFFFFF',
+        'light-surface': '#FAF7F0',
+        'light-on-surface': '#1B221E',
+        'light-surface-container': '#F2ECE1',
+        'light-surface-container-high': '#E6DDCE',
+        'light-on-surface-variant': '#58625B',
+        'dark-primary': '#9CD7B7',
+        'dark-on-primary': '#0B2618',
+        'dark-surface': '#111A15',
+        'dark-on-surface': '#E9F0EC',
+        'dark-surface-container': '#1A2620',
+        'dark-surface-container-high': '#24332B',
+        'dark-on-surface-variant': '#AEC0B6',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '64px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Castoro"', 'sans-serif'],
+        'headline': ['"Castoro"', 'sans-serif'],
+        'title': ['"Merriweather Sans"', 'sans-serif'],
+        'body': ['"Merriweather Sans"', 'sans-serif'],
+        'label': ['"Merriweather Sans"', 'sans-serif'],
+        'mono': ['"Spline Sans Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['32px', { lineHeight: '40px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', fontWeight: '600' }],
+        'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '600' }],
+        'title-lg': ['18px', { lineHeight: '26px', fontWeight: '700' }],
+        'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', fontWeight: '700' }],
+        'label-md': ['12px', { lineHeight: '16px', fontWeight: '600' }],
+        'mono-sm': ['12px', { lineHeight: '16px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '250ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
